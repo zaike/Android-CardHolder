@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CardHolder</string>
+
+    <!-- 共通 -->
+    <string name="emptyString"></string>
+    
+    <!-- 一覧画面関係 -->
+    <string name="listViewTitle">カード一覧</string>
+    <string name="listViewTitleButtonAdd">追加</string>
+    <string name="listViewTitleButtonSetting">設定</string>
+    <string name="listViewButton">Button</string>
+    <string name="cardImage">カードのサムネイル</string>
+
+    <!-- 編集画面関係 -->
+    <string name="emptyViewTitle"></string>
+    <string name="addViewTitle">カード登録</string>
+    <string name="editViewTitle">カード編集</string>
+    <string name="editViewLabelName">カード名称：</string>
+    <string name="editViewLabelImage">カードイメージ：</string>
+    <string name="editViewLabelMemo">カード備考：</string>
+    <string name="editViewButtonCancel">戻る</string>
+    <string name="editViewButtonDelete">削除</string>
+    <string name="editViewButtonOk">OK</string>
+    <string name="editViewDescriptionFront">カード表面のサムネイル</string>
+    <string name="editViewDescriptionBack">カード裏面のサムネイル</string>
+    
+	<!-- 詳細画面関係 -->
+    <string name="detailViewTitle">カード詳細</string>
+
+	<!-- 撮影画面関係 -->
+
+	<!-- 設定ダイアログ関係 -->
+	<string name="buttonInit">データ初期化</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="MyTheme" parent="android:Theme">
+        <item name="android:windowTitleBackgroundStyle">@style/title</item>
+        <item name="android:windowTitleSize">50dip</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:background">#000000</item>
+    </style>
+
+   	<style name="title">
+   	    <item name="android:paddingLeft">10dip</item>
+	    <item name="android:background">@drawable/title_back</item>
+	    <item name="android:gravity">center_vertical|center_horizontal</item>
+	    <item name="android:shadowColor">#BB000000</item>
+        <item name="android:shadowRadius">2.75</item> 
+  	</style>
+
+	<style name="Theme.CustomProgressDialog" parent="android:style/Theme.Dialog">
+	    <item name="android:windowNoTitle">true</item>
+	    <item name="android:windowBackground">@android:color/transparent</item>
+  </style> 
+</resources>

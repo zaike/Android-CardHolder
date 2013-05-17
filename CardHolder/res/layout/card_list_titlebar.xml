@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/titleLayout"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/title_back"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:minHeight="40sp"
+        android:text="@string/listViewTitle"
+        android:background="@drawable/title_back"
+        android:shadowColor="#FF000000"
+        android:shadowRadius="2.75"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/myMargin03"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/listViewTitleButtonAdd" />
+
+    <Button
+        android:id="@+id/buttonSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/myMargin03"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/listViewTitleButtonSetting" />
+</LinearLayout>

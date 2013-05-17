@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/editLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/myMargin10"
+                android:layout_marginRight="@dimen/myMargin10"
+                android:layout_marginTop="@dimen/myMargin10" >
+
+                <TextView
+                    android:id="@+id/editTextName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:text="@string/editViewLabelName" >
+
+                    <requestFocus />
+                </TextView>
+
+                <EditText
+                    android:id="@+id/editEditName"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/myMargin10"
+                android:layout_marginRight="@dimen/myMargin10" >
+
+                <TextView
+                    android:id="@+id/editTextMemo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editViewLabelMemo" />
+
+                <EditText
+                    android:id="@+id/editEditMemo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:minLines="3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/myMargin10"
+                android:layout_marginRight="@dimen/myMargin10" >
+
+                <TextView
+                    android:id="@+id/editTextFrontImage"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/editViewLabelImage" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="@dimen/myMargin10"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/myMargin05"
+            android:paddingRight="@dimen/myMargin05" >
+
+            <RelativeLayout
+                android:id="@+id/editTextFrontFrame"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_weight="1"
+                android:background="@layout/frame"
+                android:gravity="top|center_horizontal"
+                android:padding="2dp" >
+
+            <ProgressBar
+                android:id="@+id/progressFront"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/editImageFront"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right"
+                android:src="@drawable/front48"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/editTextBackFrame"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_weight="1"
+                android:background="@layout/frame"
+                android:gravity="top|left"
+                android:padding="2dp" >
+
+                <ProgressBar
+                    android:id="@+id/progressBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/editImageBack"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="top|left"
+                android:src="@drawable/front48" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/myMargin10"
+            android:layout_marginRight="@dimen/myMargin10"
+            android:gravity="bottom" >
+
+            <Button
+                android:id="@+id/editButtonCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/editViewButtonCancel" />
+
+            <Button
+                android:id="@+id/editButtonDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/editViewButtonDelete" />
+
+            <Button
+                android:id="@+id/editButtonOk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/editViewButtonOk" />
+        </LinearLayout>
+
+    </LinearLayout>

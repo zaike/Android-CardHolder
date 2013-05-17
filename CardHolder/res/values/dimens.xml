@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="listButtonRight">10dp</dimen>
+    <dimen name="myMargin10">10dp</dimen>
+    <dimen name="myMargin03">3dp</dimen>
+    <dimen name="myMargin05">5dp</dimen>
+    <dimen name="none">0dp</dimen>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cell"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/myMargin05"
+    android:orientation="horizontal">
+<!--        
+    <ImageView
+        android:id="@+id/cellIcon"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/myMargin05"
+        android:layout_marginRight="@dimen/myMargin05"
+        android:layout_weight="1"
+        android:contentDescription="@string/cardImage"
+        android:src="@drawable/title_back"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/cellLoading"
+        style="@android:style/Widget.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/myMargin05"
+        android:layout_marginRight="@dimen/myMargin05"
+        android:max="10000" />
+-->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/cardName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+    android:textColor="@color/list_text_color"
+	        android:choiceMode="singleChoice" />
+
+        <TextView
+            android:id="@+id/cardId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/cardMemo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+        
+        <TextView
+            android:id="@+id/cardModDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+        
+    </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_weight="0"
+                android:focusable="false"
+                android:text="@string/listViewButton" />
+        
+</LinearLayout>

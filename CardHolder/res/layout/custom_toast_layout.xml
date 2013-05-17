@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/customToastLayout"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:background="@layout/radius_shape">
+ 
+	<ImageView android:id="@+id/imageToast"
+	  android:layout_width="wrap_content"
+	  android:layout_height="fill_parent"/>
+ 
+	<TextView android:id="@+id/textToast"
+	  android:layout_width="wrap_content"
+	  android:layout_height="fill_parent"/>
+ 
+</LinearLayout>
