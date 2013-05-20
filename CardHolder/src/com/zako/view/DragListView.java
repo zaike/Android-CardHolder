@@ -41,7 +41,7 @@ public class DragListView extends ListView implements AdapterView.OnItemLongClic
 	 */
 	@Override
 	public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-		return startDrag(downEvent);
+		return startDrag(downEvent, position);
 	}
 
 	/**
@@ -83,14 +83,11 @@ public class DragListView extends ListView implements AdapterView.OnItemLongClic
 	/**
 	 * ドラッグ開始
 	 */
-	private boolean startDrag(MotionEvent event) {
+	private boolean startDrag(MotionEvent event, int position) {
 		dragging = false;
 		int x = (int) event.getX();
 		int y = (int) event.getY();
 
-		// イベントから position を取得
-		// 取得した position が 0未満＝範囲外の場合はドラッグを開始しない
-		int position = eventToPosition(event);
 		if (position < 0) {
 			return false;
 		}
@@ -197,13 +194,6 @@ public class DragListView extends ListView implements AdapterView.OnItemLongClic
 		if (middleView != null) {
 			setSelectionFromTop(middlePosition, middleView.getTop() - speed);
 		}
-	}
-
-	/**
-	 * MotionEvent から position を取得する
-	 */
-	private int eventToPosition(MotionEvent event) {
-		return pointToPosition((int) event.getX(), (int) event.getY());
 	}
 
 	/**

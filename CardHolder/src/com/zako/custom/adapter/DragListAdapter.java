@@ -72,7 +72,6 @@ public class DragListAdapter extends ArrayAdapter<CardInfo> {
 			v = inflater.inflate(this.viewResourceId, null);
 		}
 
-
 		CardInfo cardInfo = (CardInfo)items.get(position);
 
 		// カード名称をセット
@@ -90,29 +89,12 @@ public class DragListAdapter extends ArrayAdapter<CardInfo> {
 		// カード更新日をセット
 		TextView cardInfoModDate = (TextView)v.findViewById(R.id.cardModDate);
 		cardInfoModDate.setText(cardInfo.getCardModDate());
-
-		// アイコンをセット
-//		ImageView icon = (ImageView)v.findViewById(R.id.cellIcon);
-//		ProgressBar loading = (ProgressBar)v.findViewById(R.id.cellLoading);
 		
 		// ボタンをセット
 		Button button = (Button)v.findViewById(R.id.buttonEdit);
 
 		// セルをセット
 		LinearLayout cell = (LinearLayout)v.findViewById(R.id.cell);
-
-//		if (cardInfo.getCardFrontImage() != null) {
-//			// 画像非同期読込み
-//			if (icon.getTag() == null) {
-//				icon.setTag(cardInfoId.getText().toString());
-//			}
-//				ListBitmapTask loadTask = new ListBitmapTask(icon, loading, cardInfoId.getText().toString());
-//				loadTask.execute(cardInfo.getCardFrontImage());
-//		} else {
-//			icon.setImageDrawable(context.getResources().getDrawable(R.drawable.title_back));
-//			icon.setVisibility(View.VISIBLE);
-//			loading.setVisibility(View.GONE);
-//		}
 
 		if (button.getTag() == null) {
 			button.setOnClickListener(new View.OnClickListener() {
@@ -130,15 +112,7 @@ public class DragListAdapter extends ArrayAdapter<CardInfo> {
 			if (this.animItemIndex == position) {
 
 				cardInfoName.setVisibility(View.VISIBLE);
-				
-				
-//				if (loading.getVisibility() == View.INVISIBLE) {
-//					loading.setVisibility(View.VISIBLE);
-//				}
-//				
-//				if (icon.getVisibility() == View.INVISIBLE) {
-//					icon.setVisibility(View.VISIBLE);
-//				}
+
 				button.setVisibility(View.VISIBLE);
 
 				ScaleAnimation scale = new ScaleAnimation(1.5f, 1f, 1.5f, 1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
@@ -152,54 +126,19 @@ public class DragListAdapter extends ArrayAdapter<CardInfo> {
 				this.mCallback.onDragExit();
 			} else {
 				cardInfoName.setVisibility(View.VISIBLE);
-				
-				
-//				if (loading.getVisibility() == View.INVISIBLE) {
-//					loading.setVisibility(View.VISIBLE);
-//				}
-//				
-//				if (icon.getVisibility() == View.INVISIBLE) {
-//					icon.setVisibility(View.VISIBLE);
-//				}
+
 				button.setVisibility(View.VISIBLE);
 			}
 		} else {
 			if (this.currentPosition == -1) {
-				Log.d("一覧再描画", position + ", " + currentPosition);
 				cardInfoName.setVisibility(View.VISIBLE);
-				
-//				if (loading.getVisibility() == View.INVISIBLE) {
-//					loading.setVisibility(View.VISIBLE);
-//				}
-//				
-//				if (icon.getVisibility() == View.INVISIBLE) {
-//					icon.setVisibility(View.VISIBLE);
-//				}
 				button.setVisibility(View.VISIBLE);
 			} else {
 				if (this.currentPosition == position) {
-					Log.d("ターゲット", position + ", " + currentPosition);
 					cardInfoName.setVisibility(View.INVISIBLE);
-					
-//					if (loading.getVisibility() == View.VISIBLE) {
-//						loading.setVisibility(View.INVISIBLE);
-//					}
-//					
-//					if (icon.getVisibility() == View.VISIBLE) {
-//						icon.setVisibility(View.INVISIBLE);
-//					}
 					button.setVisibility(View.INVISIBLE);
 				} else {
-					Log.d("無関係", position + ", " + currentPosition);
 					cardInfoName.setVisibility(View.VISIBLE);
-					
-//					if (loading.getVisibility() == View.INVISIBLE) {
-//						loading.setVisibility(View.VISIBLE);
-//					}
-//					
-//					if (icon.getVisibility() == View.INVISIBLE) {
-//						icon.setVisibility(View.VISIBLE);
-//					}
 					button.setVisibility(View.VISIBLE);
 				}
 			}
@@ -215,6 +154,7 @@ public class DragListAdapter extends ArrayAdapter<CardInfo> {
 	 * @param position
 	 */
 	public void startDrag(int position) {
+		Log.d("startDrag = ", position + ", currentPosition = " + currentPosition);
 		this.currentPosition = position;
 		this.draggingItem = items.get(currentPosition);
 	}

@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -210,7 +211,10 @@ public class CardEditActivity extends Activity implements OnClickListener, OnTou
 		int imageHeight = 0;
 
 		WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-		imageWidth = wm.getDefaultDisplay().getWidth() / 2 - 60;
+
+		Point size = new Point();
+		wm.getDefaultDisplay().getSize(size);
+		imageWidth = size.x / 2 - 60;
 
 		// カードの大きさ(5.4*8.5)比率にカードイメージをサイズ調整
 		imageHeight = (int)((imageWidth / 8.5f) * 6.5f);

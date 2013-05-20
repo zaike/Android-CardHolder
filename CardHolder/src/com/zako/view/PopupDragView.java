@@ -5,17 +5,14 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 
 public class PopupDragView extends ImageView {
 	private static final Bitmap.Config DRAG_BITMAP_CONFIG = Bitmap.Config.ARGB_8888;
-	private static final int BACKGROUND_COLOR = Color.argb(0, 0x00, 0x00, 0x00);
-	private static final int Y_GAP = 20;
+	private static final int BACKGROUND_COLOR = Color.argb(128, 0xFF, 0x00, 0x00);
 
 	private WindowManager windowManager;
 	private WindowManager.LayoutParams layoutParams;
@@ -56,9 +53,9 @@ public class PopupDragView extends ImageView {
 		setBitmap(itemView);
 
 		// WindowManagerÇ…ìoò^Ç∑ÇÈ
-		updateLayoutParams(x, y);
-		layoutParams.height = (int)(itemView.getHeight() * 1.5);
-		layoutParams.width = (int)(itemView.getWidth() * 1.5);
+//		updateLayoutParams(x, y);
+//		layoutParams.height = (int)(itemView.getHeight() * 2);
+//		layoutParams.width = (int)(itemView.getWidth() * 1.0);
 		
 //		layoutParams.height = itemView.getHeight() * 2;
 
@@ -136,6 +133,6 @@ public class PopupDragView extends ImageView {
 	private void updateLayoutParams(int x, int y) {
 		// ÉhÉâÉbÉOíÜÇ≈Ç†ÇÈÇ±Ç∆Ç™ï™Ç©ÇÈÇÊÇ§Ç…è≠Çµè„Ç…Ç∏ÇÁÇ∑
 		layoutParams.x = itemLocation[0] + x - baseX;
-		layoutParams.y = itemLocation[1] + y - baseY - Y_GAP;
+		layoutParams.y = itemLocation[1] + y - baseY + 150;// - baseY - Y_GAP;
 	}
 }

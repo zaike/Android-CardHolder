@@ -5,6 +5,7 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Point;
 import android.graphics.Rect;
 import android.hardware.Camera;
 import android.hardware.Camera.AutoFocusCallback;
@@ -82,8 +83,16 @@ public class CardImageShotActivity extends Activity implements OnTouchListener, 
 			height = 25;
 			break;
 		}
-		wWidth = wm.getDefaultDisplay().getWidth();
-		wHeight = wm.getDefaultDisplay().getHeight() - (height * 2);
+
+		if (Integer.valueOf(android.os.Build.VERSION.SDK_INT) < 13) {
+			wWidth = wm.getDefaultDisplay().getWidth();
+			wHeight = wm.getDefaultDisplay().getHeight() - (height * 2);
+		} else {
+			Point size = new Point();
+			wm.getDefaultDisplay().getSize(size);
+			wWidth = size.x;
+			wHeight = size.y - (height * 2);
+		}
 
 		viewWidth = (int)(wHeight / 5.4f * 8.5f);
 		viewHeight = wHeight;
@@ -110,15 +119,22 @@ public class CardImageShotActivity extends Activity implements OnTouchListener, 
 		try {
 			camera = Camera.open();
 
-			Camera.Parameters camParam = this.camera.getParameters();
-
 			Camera.Parameters parameters = camera.getParameters();
-			List<Camera.Size> sizes = parameters.getSupportedPreviewSizes();
-			Camera.Size cs = sizes.get(0);
-			parameters.setPreviewSize(cs.width, cs.height);
+			List<Camera.Size> availablePrevSizes = parameters.getSupportedPreviewSizes();
+			Camera.Size prvSize = availablePrevSizes.get(0);
+			parameters.setPreviewSize(prvSize.width, prvSize.height);
+			
+			List<Camera.Size> availablePictSizes = parameters.getSupportedPictureSizes();
+			Camera.Size pctSize = availablePictSizes.get(0);
+			
+			for (Camera.Size size:availablePictSizes) {
+				if (1280 >= Math.max(size.width, size.height)) {
+					pctSize = size;
+					break;
+				}
+			}
+			parameters.setPictureSize(pctSize.width, pctSize.height);
 			camera.setParameters(parameters);
-			
-			
 			
 //			camParam.setPictureSize(viewWidth * 2, viewHeight * 2);
 //			this.camera.setParameters(camParam);

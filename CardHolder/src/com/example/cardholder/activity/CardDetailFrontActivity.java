@@ -3,19 +3,19 @@ package com.example.cardholder.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.util.FloatMath;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.view.animation.AlphaAnimation;
 import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -25,7 +25,6 @@ import android.widget.RelativeLayout;
 
 import com.example.cardholder.R;
 import com.example.cardholder.anim.FrontBackSwitchAnimator;
-import com.example.cardholder.task.DetailImageTask;
 import com.zako.custom.object.CardInfo;
 
 public class CardDetailFrontActivity extends Activity implements OnTouchListener, OnClickListener {
@@ -88,11 +87,17 @@ public class CardDetailFrontActivity extends Activity implements OnTouchListener
      * 画面パーツ配置処理
      */
 	protected void findViews() {
+		// 画面向きの取得
+		Configuration config = getResources().getConfiguration();
+		
 		this.layoutFront = (RelativeLayout)findViewById(R.id.layoutDetailFront);
 		this.imageViewDetailFront = (ImageView)findViewById(R.id.imageViewDetailFront);
 		this.imageViewDetailBack = (ImageView)findViewById(R.id.imageViewDetailBack);
 		this.progressDetailFront = (ProgressBar)findViewById(R.id.progressDetailFront);
-		this.editMemo = (EditText)findViewById(R.id.editMemoDetailFront);
+
+		if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
+			this.editMemo = (EditText)findViewById(R.id.editMemoDetailFront);
+		}
 		this.buttonRight = (Button)findViewById(R.id.buttonDetailNext);
 		this.buttonLeft = (Button)findViewById(R.id.buttonDetailPrev);
 
@@ -125,7 +130,7 @@ public class CardDetailFrontActivity extends Activity implements OnTouchListener
 		this.imageViewDetailBack.setLayoutParams(imageParam);
 
 		LinearLayout.LayoutParams layoutParam = new LinearLayout.LayoutParams(imageWidth, imageHeight);
-		layoutParam.topMargin = 30;
+		layoutParam.topMargin = 0;
 		layoutParam.leftMargin = 0;
 		layoutParam.rightMargin = 0;
 		this.layoutFront.setLayoutParams(layoutParam);
@@ -173,7 +178,7 @@ public class CardDetailFrontActivity extends Activity implements OnTouchListener
 
 		this.progressDetailFront.setVisibility(View.GONE);
 		
-		if (this.cardInfo.getCardMemo() != null) {
+		if (this.cardInfo.getCardMemo() != null && config.orientation == Configuration.ORIENTATION_PORTRAIT) {
 			this.editMemo.setText(this.cardInfo.getCardMemo());
 		}
 

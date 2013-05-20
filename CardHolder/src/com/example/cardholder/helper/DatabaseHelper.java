@@ -13,14 +13,13 @@ import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.os.Environment;
 
 import com.zako.custom.object.CardInfo;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 	   
     /* データベース名 */  
-	private static final String DB_NAME = Environment.getExternalStorageDirectory() + "/cardHolder.db";
+	private static final String DB_NAME = "cardHolder.db";//Environment.getExternalStorageDirectory() + File.separator + "cardHolder.db";
     /* データベースのバージョン */  
     private final static int DB_VER = 1;      
     /* コンテキスト */  

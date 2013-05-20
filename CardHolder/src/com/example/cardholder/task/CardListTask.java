@@ -30,10 +30,7 @@ public class CardListTask implements Runnable {
 		DatabaseHelper dbHelper = new DatabaseHelper(context);
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
 		
-		String[] cols = {"cardId", "frontImage", "backImage", "cardName", "sortNum", "date", "memo"};
-
 		ArrayList<CardInfo> listData = dbHelper.selectAllData(db);
-		//dbHelper.selectData(db, "card", cols, null, null, null, null, "");
 
 		db.close();
 
@@ -44,13 +41,6 @@ public class CardListTask implements Runnable {
 		this.message = new Message();
 		this.message.what = Const.LIST_GET_LIST_TASK_RUNNING;
 		
-		this.handler.sendMessage(this.message);
-	}
-
-	private void onError() {
-		this.message = new Message();
-		this.message.what = Const.LIST_GET_LIST_TASK_FAILED;
-
 		this.handler.sendMessage(this.message);
 	}
 
