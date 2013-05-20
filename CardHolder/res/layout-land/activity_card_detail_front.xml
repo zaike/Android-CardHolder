@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="top"
+        android:orientation="vertical" >
+
+	        <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="0dp"
+	            android:layout_gravity="fill_vertical"
+	            android:layout_marginTop="15dp"
+	            android:layout_marginBottom="15dp"
+	            android:layout_weight="1" >
+	
+	            <Button
+	                android:id="@+id/buttonDetailPrev"
+	                style="?android:attr/buttonStyleSmall"
+	                android:layout_width="wrap_content"
+	                android:layout_height="fill_parent"
+	                android:layout_weight="1"
+	                android:text="Button" />
+	
+	            <RelativeLayout
+	                android:id="@+id/layoutDetailFront"
+	                android:layout_width="fill_parent"
+	                android:layout_height="fill_parent"
+	                android:layout_weight="1"
+	                android:background="@layout/radius_shape"
+	                android:gravity="center_vertical|center_horizontal">
+	
+	                <ProgressBar
+	                    android:id="@+id/progressDetailFront"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_centerHorizontal="true"
+	                    android:layout_centerVertical="true" />
+	
+	                <ImageView
+	                    android:id="@+id/imageViewDetailFront"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="fill_parent"
+	                    android:layout_centerHorizontal="true"
+	                    android:layout_centerVertical="true"
+	                    android:scaleType="matrix"
+	                    android:src="@drawable/front48" />
+	                <ImageView 
+	                    android:id="@+id/imageViewDetailBack"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="fill_parent"
+	                    android:layout_centerHorizontal="true"
+	                    android:layout_centerVertical="true"
+	                    android:scaleType="matrix"
+	                    android:src="@drawable/front48"
+	                    android:visibility="invisible" />
+	            </RelativeLayout>
+	
+	            <Button
+	                android:id="@+id/buttonDetailNext"
+	                style="?android:attr/buttonStyleSmall"
+	                android:layout_width="wrap_content"
+	                android:layout_height="fill_parent"
+	                android:layout_weight="1"
+	                android:text="Button" />
+	
+	        </LinearLayout>
+    </LinearLayout>
