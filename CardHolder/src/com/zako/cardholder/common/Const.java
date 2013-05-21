@@ -1,4 +1,4 @@
-package com.example.cardholder.common;
+package com.zako.cardholder.common;
 
 public class Const {
 

@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.cardholder.R;
+import com.zako.cardholder.R;
 import com.zako.interfaces.CustomAlertDialogCallback;
 
 public class CustomAlertDialog extends Dialog implements OnClickListener {

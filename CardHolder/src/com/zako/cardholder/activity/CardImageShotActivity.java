@@ -1,4 +1,4 @@
-package com.example.cardholder.activity;
+package com.zako.cardholder.activity;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.cardholder.R;
+import com.zako.cardholder.R;
 import com.zako.view.CameraPreviewView;
 
 public class CardImageShotActivity extends Activity implements OnTouchListener, AutoFocusCallback, Camera.PictureCallback {

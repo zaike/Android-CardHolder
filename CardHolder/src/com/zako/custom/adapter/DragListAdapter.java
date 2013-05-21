@@ -17,8 +17,8 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.cardholder.R;
-import com.example.cardholder.task.ListBitmapTask;
+import com.zako.cardholder.R;
+import com.zako.cardholder.task.ListBitmapTask;
 import com.zako.custom.object.CardInfo;
 import com.zako.interfaces.DragListViewCallback;
 

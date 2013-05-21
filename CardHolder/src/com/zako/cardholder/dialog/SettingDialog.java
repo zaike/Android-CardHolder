@@ -1,4 +1,4 @@
-package com.example.cardholder.dialog;
+package com.zako.cardholder.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -7,9 +7,9 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.example.cardholder.R;
-import com.example.cardholder.common.Const;
-import com.example.cardholder.helper.DatabaseHelper;
+import com.zako.cardholder.R;
+import com.zako.cardholder.common.Const;
+import com.zako.cardholder.helper.DatabaseHelper;
 import com.zako.dialog.CustomAlertDialog;
 import com.zako.dialog.CustomProgressDialog;
 import com.zako.interfaces.CustomAlertDialogCallback;

@@ -1,4 +1,4 @@
-package com.example.cardholder.activity;
+package com.zako.cardholder.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 
-import com.example.cardholder.R;
+import com.zako.cardholder.R;
 
 /**
  * 起動時スプラッシュ画面用Activityクラス

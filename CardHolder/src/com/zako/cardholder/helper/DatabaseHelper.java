@@ -1,4 +1,4 @@
-package com.example.cardholder.helper;
+package com.zako.cardholder.helper;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,7 +19,7 @@ import com.zako.custom.object.CardInfo;
 public class DatabaseHelper extends SQLiteOpenHelper {
 	   
     /* データベース名 */  
-	private static final String DB_NAME = "cardHolder.db";//Environment.getExternalStorageDirectory() + File.separator + "cardHolder.db";
+	private static final String DB_NAME = "cardHolder.db";
     /* データベースのバージョン */  
     private final static int DB_VER = 1;      
     /* コンテキスト */  
@@ -28,8 +28,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /** 
      * コンストラクタ 
      */  
-    public DatabaseHelper(Context context) {  
-        super(context, DB_NAME, null, DB_VER);  
+    public DatabaseHelper(Context context) {
+        super(context, context.getExternalFilesDir(null).toString() + File.separator + DB_NAME, null, DB_VER);
         mContext = context;  
     }  
   
@@ -66,7 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * DBファイル初期化処理
      */
     public boolean initialize() {
-    	File file = new File(DB_NAME);
+    	File file = new File(mContext.getExternalFilesDir(null).toString() + File.separator + DB_NAME);
     	if (file.exists()) {
     		return file.delete();
     	}

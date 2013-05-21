@@ -1,4 +1,4 @@
-package com.example.cardholder.activity;
+package com.zako.cardholder.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -23,8 +23,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
-import com.example.cardholder.R;
-import com.example.cardholder.anim.FrontBackSwitchAnimator;
+import com.zako.cardholder.R;
+import com.zako.cardholder.anim.FrontBackSwitchAnimator;
 import com.zako.custom.object.CardInfo;
 
 public class CardDetailFrontActivity extends Activity implements OnTouchListener, OnClickListener {

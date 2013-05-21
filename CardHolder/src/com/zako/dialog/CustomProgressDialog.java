@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.widget.TextView;
 
-import com.example.cardholder.R;
+import com.zako.cardholder.R;
 
 public class CustomProgressDialog extends Dialog {
 

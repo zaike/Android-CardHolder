@@ -1,15 +1,11 @@
-package com.example.cardholder.activity;
-
-import java.io.ByteArrayOutputStream;
+package com.zako.cardholder.activity;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -27,12 +23,12 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.cardholder.R;
-import com.example.cardholder.common.Const;
-import com.example.cardholder.task.CardDataAddTask;
-import com.example.cardholder.task.CardDataDelTask;
-import com.example.cardholder.task.CardDataEditTask;
-import com.example.cardholder.task.ListBitmapTask;
+import com.zako.cardholder.R;
+import com.zako.cardholder.common.Const;
+import com.zako.cardholder.task.CardDataAddTask;
+import com.zako.cardholder.task.CardDataDelTask;
+import com.zako.cardholder.task.CardDataEditTask;
+import com.zako.cardholder.task.ListBitmapTask;
 import com.zako.custom.object.CardInfo;
 import com.zako.dialog.CustomAlertDialog;
 import com.zako.dialog.CustomProgressDialog;

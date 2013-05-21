@@ -1,12 +1,12 @@
-package com.example.cardholder.task;
+package com.zako.cardholder.task;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Handler;
 import android.os.Message;
 
-import com.example.cardholder.common.Const;
-import com.example.cardholder.helper.DatabaseHelper;
+import com.zako.cardholder.common.Const;
+import com.zako.cardholder.helper.DatabaseHelper;
 import com.zako.custom.object.CardInfo;
 
 public class CardDataDelTask implements Runnable {
